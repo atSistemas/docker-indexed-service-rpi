@@ -12,4 +12,4 @@ ENV SERVICE_ID=${SERVICE_ID}
 
 RUN bash -c 'touch /indexed-service.jar'
 
-CMD java -Djava.security.egd=file:/dev/./urandom -Dspring.cloud.consul.host=$CONSUL_PORT_8500_TCP_ADDR -jar /indexed-service.jar
+CMD java -Xmx32m -Xss256k -Djava.security.egd=file:/dev/./urandom -Dspring.cloud.consul.host=$CONSUL_PORT_8500_TCP_ADDR -jar /indexed-service.jar
